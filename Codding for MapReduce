@@ -1,2 +1,21 @@
-# MapReduce-for-YoutubeDataAnalysis
-This is how we can do MapReduce in Hadoop at Ubuntu VirtualBox
+# This part when we make directory for YouTubeInput
+$ hdfs dfs -mkdir /YouTubeInput
+
+# This part we put the data
+$ hdfs dfs -put /home/hduser/Downloads/GBvideos.csv
+
+# This is we do the hadoop jar, Jar file we export at eclipse, which is at eclipse we make a Mapper,Reduce and Driver file java and class
+# After get the JAR file we put at YoutubeInput and YoutubeOutput
+# This part when hadoop MapReduce run
+$ hadoop jar /home/hduser/TopCategoryData.jar TopCategoryDriver /YouTubeInput /YouTubeOutput
+
+#This part will display the contents of files stored in the directory
+# If output out 0 its mean the file or directory is emptt (no data)
+# That star crucial to put
+# This part also content the data which is can view the result
+# If your YouTubeOutput not exist, make the directory file (mkdir)
+$ hdfs dfs -cat /YouTubeOutput/*
+
+# this part is to download files from HDFS to a local filesystem directory
+# Your YouuTubeAnalysis will be at filesystem
+$ hdfs dfs -get /YouTubeOutput/* /home/hduser/~home/Downloads/YouTubeAnalysis/TopCategoryOutput
