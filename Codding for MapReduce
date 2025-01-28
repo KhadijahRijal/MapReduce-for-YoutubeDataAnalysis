@@ -1,7 +1,7 @@
 # This part when we make directory for YouTubeInput
 $ hdfs dfs -mkdir /YouTubeInput
 
-# This part we put the data
+# This part we put the data, you also can use json file besides csv
 $ hdfs dfs -put /home/hduser/Downloads/GBvideos.csv
 
 # This is we do the hadoop jar, Jar file we export at eclipse, which is at eclipse we make a Mapper,Reduce and Driver file java and class
